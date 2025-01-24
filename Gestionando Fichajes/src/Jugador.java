@@ -1,6 +1,7 @@
 import java.sql.Date;
 
 public class Jugador {
+<<<<<<< HEAD
     public String Nombre;
     public Date FechaNacimiento;
     public Posicion Posicion;
@@ -14,5 +15,15 @@ public class Jugador {
         Dorsal = dorsalJugador;
         Traspaso = traspasoJugador;
     }
+=======
+ 
+
+    public String Nombre;
+    public enum Formacion_Preferida{
+        _443 , _333 , _352, _541
+>>>>>>> Tony
 
 }
+}
+    
+
