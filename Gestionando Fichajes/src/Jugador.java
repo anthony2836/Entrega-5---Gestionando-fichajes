@@ -1,6 +1,11 @@
 public class Jugador {
-    public static void main(String[] args) {
-    System.out.println("Hola, q tal ");
-    }
-    
+ 
+
+    public String Nombre;
+    public enum Formacion_Preferida{
+        _443 , _333 , _352, _541
+
 }
+}
+    
+
