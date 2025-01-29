@@ -32,8 +32,6 @@ public class App {
         Jugador j5 = new Jugador("Estefano", generarFechaNacimiento(1990, 10, 15), Posicion.Defensa, 4, Traspaso.Sin_solicitar);
         Jugador j6 = new Jugador("Dibu", generarFechaNacimiento(1990, 10, 15), Posicion.Portero, 1, Traspaso.Solicitado);
 
-        System.out.println(j1);
-
         ArrayList<Jugador> jugadoresBarcelona = new ArrayList<Jugador>();
         jugadoresBarcelona.add(j1);
         jugadoresBarcelona.add(j2);
@@ -45,6 +43,10 @@ public class App {
         ArrayList<Jugador> jugadoresAtleti = new ArrayList<Jugador>();
         jugadoresAtleti.add(j5);
         jugadoresAtleti.add(j6);
+
+
+
+        System.out.println(j1);
 
     }
 }
