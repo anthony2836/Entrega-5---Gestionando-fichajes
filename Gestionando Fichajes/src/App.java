@@ -10,6 +10,9 @@ public class App {
         cal.set(anio, mes - 1, dia);
         return cal.getTime();
     }
+    public void setDorsal(int dorsal) {
+        this.Dorsal = (dorsal < 0) ? 0 : dorsal; // Evita valores negativos
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -25,7 +28,7 @@ public class App {
         Entrenador Carlo_Ancelotti = new Entrenador("Carlo Ancelotti", Formacion._333);
         Entrenador Diego_Simeone = new Entrenador("Diego Simeone", Formacion._443);
 
-        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, -10, Traspaso.Sin_solicitar);
+        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Sin_solicitar);
         Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
         Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 7, Traspaso.Aprobado_por_presidente);
         Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 9, Traspaso.Rechazado_por_entrenador);
