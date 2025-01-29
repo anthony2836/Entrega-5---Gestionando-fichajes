@@ -7,6 +7,7 @@ public class Jugador {
     private int Dorsal;
     public Traspaso Traspaso;
     public Formacion Formacion;
+    public Equipo Equipo_id; 
 
     public Jugador (String nombreJugador, Date fechaNacimientoJugador, Posicion posicionJugador, int dorsalJugador, Traspaso traspasoJugador) {
         Nombre = nombreJugador;
@@ -15,6 +16,14 @@ public class Jugador {
         Dorsal = dorsalJugador;
         Traspaso = traspasoJugador;
     }
+    public void setDorsal(int dorsal) {
+        this.Dorsal = (dorsal < 0) ? 0 : dorsal; // Evita valores negativos
+    }
+
+
+
+    
+
     public int getDorsal(){
         return Dorsal;
     }
