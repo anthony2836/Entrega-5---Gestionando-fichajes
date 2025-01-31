@@ -6,14 +6,17 @@ import java.util.Date;
 public class App {
 
     public static Date generarFechaNacimiento(int anio, int mes, int dia) {
+
+        if (anio > 2005) { 
+            System.out.println("Fecha incorecta correcta, tiene que ser mayor de edad");
+        }
+
         Calendar cal = Calendar.getInstance();
         cal.set(anio, mes - 1, dia);
         return cal.getTime();
-    }
-    public void setDorsal(int dorsal) {
-        this.Dorsal = (dorsal < 0) ? 0 : dorsal; // Evita valores negativos
-    }
-
+ 
+    } 
+   
     public static void main(String[] args) throws Exception {
 
         Equipo Barcelona = new Equipo("Barcelona", "FBC");
@@ -28,12 +31,12 @@ public class App {
         Entrenador Carlo_Ancelotti = new Entrenador("Carlo Ancelotti", Formacion._333);
         Entrenador Diego_Simeone = new Entrenador("Diego Simeone", Formacion._443);
 
-        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Sin_solicitar);
-        Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
-        Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 7, Traspaso.Aprobado_por_presidente);
-        Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 9, Traspaso.Rechazado_por_entrenador);
-        Jugador j5 = new Jugador("Estefano", generarFechaNacimiento(1990, 10, 15), Posicion.Defensa, 4, Traspaso.Sin_solicitar);
-        Jugador j6 = new Jugador("Dibu", generarFechaNacimiento(1990, 10, 15), Posicion.Portero, 1, Traspaso.Solicitado);
+        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, -2, Traspaso.Sin_solicitar);
+        Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1977, 10, 15), Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
+        Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1940, 10, 15), Posicion.Delantero, 7, Traspaso.Aprobado_por_presidente);
+        Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1965, 10, 15), Posicion.Delantero, 9, Traspaso.Rechazado_por_entrenador);
+        Jugador j5 = new Jugador("Estefano", generarFechaNacimiento(1946, 10, 15), Posicion.Defensa, 4, Traspaso.Sin_solicitar);
+        Jugador j6 = new Jugador("Dibu", generarFechaNacimiento(1973, 10, 15), Posicion.Portero, 1, Traspaso.Solicitado);
 
         ArrayList<Jugador> jugadoresBarcelona = new ArrayList<Jugador>();
         jugadoresBarcelona.add(j1);
@@ -50,6 +53,7 @@ public class App {
 
 
         System.out.println(j1);
+        System.out.println(j2);
 
     }
 }

@@ -4,7 +4,7 @@ public class Jugador {
     public String Nombre;
     public Date FechaNacimiento;
     public Posicion Posicion;
-    private int Dorsal;
+    public int Dorsal;
     public Traspaso Traspaso;
     public Formacion Formacion;
     public Equipo Equipo_id; 
@@ -16,25 +16,24 @@ public class Jugador {
         Dorsal = dorsalJugador;
         Traspaso = traspasoJugador;
     }
-    public void setDorsal(int dorsal) {
-        this.Dorsal = (dorsal < 0) ? 0 : dorsal; // Evita valores negativos
+
+    public void dorsalJugador (int dorsal) {
+        this.Dorsal = ( Dorsal < 0) ? 0 : Dorsal; // Evita valores negativos
     }
 
 
-
-    
-
-    public int getDorsal(){
-        return Dorsal;
-    }
+    // public int getDorsal(){
+    //     return Dorsal;
+    // }
     public void getDorsal(int newDorsal){
         Dorsal = newDorsal;
-        if (Dorsal < 0) {
+        if (Dorsal < 0 ) {
             System.out.println("Error, el Dorsal no puede ser negativo");
-            Dorsal = 0;
+            
         } else {
-            Dorsal = newDorsal;
-        }
+            System.out.println("num correct");
+        }            
+
     }
     public String toString(){
         return Nombre + Dorsal;
