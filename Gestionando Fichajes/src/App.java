@@ -13,9 +13,10 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        Equipo Team1 = new Equipo("Barcelona", "FBC");
-        Equipo Team2 = new Equipo("Real Madrid", "RMCF");
-        Equipo Team3 = new Equipo("Atletico Del Madrid", "ATM");
+
+        Equipo Team1 = new Equipo("Barcelona", "FBC", null, null, null);
+        Equipo Team2 = new Equipo("RealMadrid", "RMCF", null, null, null);
+        Equipo Team3 = new Equipo("AtleticoDelMadrid", "ATM", null, null, null);
 
         Presidente p1 = new Presidente("43234401B", "Joan Laporta");
         Presidente p2 = new Presidente("34565543L", "Florentino Pérez");
@@ -44,12 +45,16 @@ public class App {
         jugadoresAtleti.add(j5);
         jugadoresAtleti.add(j6);
 
+        // Team4.setPresidente_id(p1);
+        // Team4.setEntrenador_id(e1);
+        // Team4.setJugadores_lista(jugadoresBarcelona);
+
 
 
         // System.out.println(j1);
         // System.out.println(p1);
         // System.out.println(e2);
-        System.out.println(j1);
+        // System.out.println(Team4);
 
 
     }

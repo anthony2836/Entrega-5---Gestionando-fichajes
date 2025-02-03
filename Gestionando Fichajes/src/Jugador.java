@@ -47,6 +47,9 @@ public class Jugador {
     }
 
     public void setNombre(String nombre) {
+        if (Nombre.equals(null)) {
+            return;
+        }
         this.Nombre = nombre;
     }
 
@@ -71,6 +74,9 @@ public class Jugador {
     }
 
     public void setDorsal(int dorsal) {
+        if (dorsal < 1) {
+            return;
+        }
         Dorsal = dorsal;
     }
 
