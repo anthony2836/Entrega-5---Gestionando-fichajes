@@ -1,3 +1,5 @@
+import java.text.Normalizer.Form;
+
 public class Entrenador {
     private String Nombre;
     private Formacion Formacion;
@@ -13,16 +15,21 @@ public class Entrenador {
         return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
+    public void setNombre(String Nombre) {
+        if (Nombre == null) {
+            return;
+    }this.Nombre = Nombre;
+}
 
     public Formacion getFormacion() {
         return Formacion;
     }
 
     public void setFormacion(Formacion formacion) {
-        Formacion = formacion;
+        if (formacion== null) {
+            return ;
+            
+        }this.Formacion= formacion;
     }
 
     @Override

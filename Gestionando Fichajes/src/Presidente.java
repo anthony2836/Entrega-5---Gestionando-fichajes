@@ -16,7 +16,9 @@ public class Presidente {
     }
 
     public void setDNI(String dNI) {
-        DNI = dNI;
+      if (dNI== null) {
+        return;        
+      }this.DNI = dNI;
     }
 
     public String getNombre() {
@@ -24,7 +26,9 @@ public class Presidente {
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        if (nombre== null) {
+            return;            
+        }this.Nombre = nombre;
     }
 
     @Override

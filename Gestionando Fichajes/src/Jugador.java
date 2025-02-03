@@ -7,11 +7,11 @@ public class Jugador {
     private Posicion Posicion;
     private int Dorsal;
     private Traspaso Traspaso;
-    
-    public Equipo Equipo_id;
+    private Equipo Equipo_id;
 
     public Jugador(String nombreJugador, Date fechaNacimientoJugador, String paisJugador, Posicion posicionJugador, int dorsalJugador,
-            Traspaso traspasoJugador) {
+    Traspaso traspasoJugador) {
+
         this.Nombre = nombreJugador;
         this.FechaNacimiento = fechaNacimientoJugador;
         this.Pais = paisJugador;
@@ -19,27 +19,6 @@ public class Jugador {
         this.Dorsal = dorsalJugador;
         this.Traspaso = traspasoJugador;
 
-        validarDatos();
-    }
-
-    public void validarDatos() {
-        if (Nombre == null) {
-            System.out.println("ERROR!, Agrega un nombre");
-        }
-        if (FechaNacimiento == null) {
-            System.out.println("ERROR!, Agrega una fecha de nacimiento");
-        }
-        if (Posicion == null) {
-            System.out.println("ERROR!, Agrega una posicion");
-        }
-        if (Dorsal <= 0) {
-            System.out.println("ERROR!, Dorsal no valido");
-        }
-        if (Traspaso == null) {
-            System.out.println("ERROR!, Agrega un traspaso");
-        } else {
-            System.out.println("Todo bien");
-        }
     }
 
     public String getNombre() {
@@ -47,23 +26,32 @@ public class Jugador {
     }
 
     public void setNombre(String nombre) {
-        this.Nombre = nombre;
+
+        if (Nombre.equals (null)) {
+            return;
+        }this.Nombre = nombre;
     }
 
     public Date getFechaNacimiento() {
+    
         return FechaNacimiento;
     }
 
     public void setFechaNacimiento(Date fechaNacimiento) {
-        FechaNacimiento = fechaNacimiento;
+        if (FechaNacimiento==null) {
+            return;  
+        }FechaNacimiento = fechaNacimiento;
     }
 
     public Posicion getPosicion() {
+        
         return Posicion;
     }
 
     public void setPosicion(Posicion posicion) {
-        Posicion = posicion;
+        if (Posicion== null) {
+            return;
+        }Posicion = posicion;
     }
 
     public int getDorsal() {
@@ -71,7 +59,11 @@ public class Jugador {
     }
 
     public void setDorsal(int dorsal) {
-        Dorsal = dorsal;
+
+       if (dorsal < 1 ) {
+         return;
+
+       }this.Dorsal= dorsal;
     }
 
     public Traspaso getTraspaso() {
@@ -79,18 +71,24 @@ public class Jugador {
     }
 
     public void setTraspaso(Traspaso traspaso) {
-        Traspaso = traspaso;
-    }
 
+        if (Traspaso ==null) {
+            return;
+            
+        }this.Traspaso= traspaso;
+    }
 
     public Equipo getEquipo_id() {
         return Equipo_id;
     }
 
-    public void setEquipo_id(Equipo equipo_id) {
-        Equipo_id = equipo_id;
-    }
+    public void setEquipo_id(Equipo Equipo_id) {
 
+        if (Equipo_id== null) {
+            return;
+            
+        }this.Equipo_id= Equipo_id;
+        }
 
     @Override
     public String toString() {
