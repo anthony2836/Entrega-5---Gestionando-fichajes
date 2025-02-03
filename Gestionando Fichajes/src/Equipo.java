@@ -23,7 +23,9 @@ public class Equipo {
 
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        if (nombre ==null) {
+            return;
+        }this.Nombre = nombre;
     }
 
 
@@ -35,7 +37,10 @@ public class Equipo {
 
 
     public void setAbreviatura(String abreviatura) {
-        Abreviatura = abreviatura;
+        if (abreviatura== null) {
+            return;
+        }this.Abreviatura = abreviatura;
+        
     }
 
 
@@ -47,7 +52,10 @@ public class Equipo {
 
 
     public void setPresidente_id(Presidente presidente_id) {
-        Presidente_id = presidente_id;
+        if (presidente_id == null) {
+            return;
+        }this.Presidente_id = presidente_id;
+        
     }
 
 
@@ -59,7 +67,9 @@ public class Equipo {
 
 
     public void setEntrenador_id(Entrenador entrenador_id) {
-        Entrenador_id = entrenador_id;
+        if (entrenador_id== null) {
+            return;
+        }this.Entrenador_id = entrenador_id;
     }
 
 

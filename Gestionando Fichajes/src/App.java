@@ -20,13 +20,13 @@ public class App {
 
         Presidente p1 = new Presidente("43234401B", "Joan Laporta");
         Presidente p2 = new Presidente("34565543L", "Florentino Pérez");
-        Presidente p3 = new Presidente("23434456M", "ENRIQUE CEREZO TORRES");
+        Presidente p3 = new Presidente("23434456M", "Enrrique Cerezo Torres");
 
         Entrenador e1 = new Entrenador("Hansi Flick", Formacion._352);
         Entrenador e2 = new Entrenador("Carlo Ancelotti", Formacion._333);
         Entrenador e3 = new Entrenador("Diego Simeone", Formacion._443);
 
-        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15),"Ecuador", Posicion.Delantero, -10, Traspaso.Sin_solicitar);
+        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15),"Ecuador", Posicion.Delantero, 10, Traspaso.Sin_solicitar);
         Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1990, 10, 15),"Ecuador", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
         Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1990, 10, 15),"Ecuador", Posicion.Delantero, 7, Traspaso.Aprobado_por_presidente);
         Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1990, 10, 15),"Ecuador", Posicion.Delantero, 9, Traspaso.Rechazado_por_entrenador);
