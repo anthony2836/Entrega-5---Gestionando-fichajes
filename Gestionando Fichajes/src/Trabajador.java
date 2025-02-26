@@ -1,14 +1,20 @@
-import java.sql.Date;
+import java.util.Date;
 
 public abstract class Trabajador {
-    private String nombre;
-    private Date FechaNacimientoTrabajador;
-    private String paisOrigen;
+    protected String nombre;
+    protected Date FechaNacimientoTrabajador;
+    protected String paisOrigen;
+    private static int contadorTrabajadores = 0;
 
-    public Trabajador(String nombre, Date FechaNacimientoTrabajador, String PaisOrigen) {
+    public Trabajador(String nombre, Date fechaNacimiento, String paisOrigen) {
         this.nombre = nombre;
         this.FechaNacimientoTrabajador = FechaNacimientoTrabajador;
-        this.paisOrigen = PaisOrigen;
+        this.paisOrigen = paisOrigen;
+        contadorTrabajadores++;
+    }
+
+    public static int getContadorTrabajadores() {
+        return contadorTrabajadores;
     }
 
     public String getNombre() {
