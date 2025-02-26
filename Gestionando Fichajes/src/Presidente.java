@@ -1,4 +1,5 @@
 public class Presidente {
+
     private String DNI;
     private String Nombre;
 
@@ -12,29 +13,37 @@ public class Presidente {
     }
 
     public String getDNI() {
+
         return DNI;
+
     }
 
     public void setDNI(String dNI) {
+
       if (dNI== null) {
         return;        
       }this.DNI = dNI;
+
     }
 
     public String getNombre() {
+
         return Nombre;
+
     }
 
     public void setNombre(String nombre) {
+
         if (nombre== null) {
             return;            
         }this.Nombre = nombre;
+
     }
 
     @Override
     public String toString() {
-        return "Presidente [DNI=" + DNI + ", Nombre=" + Nombre + "]";
-    }
 
+    return "Presidente [DNI=" + DNI + ", Nombre=" + Nombre + "]";
     
+    }
 }
