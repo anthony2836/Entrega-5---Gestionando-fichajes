@@ -1,4 +1,7 @@
+package com;
 import java.util.Date;
+import com.clases.*;
+import com.enums.*;
 
 public abstract class Trabajador {
     protected String nombre;
