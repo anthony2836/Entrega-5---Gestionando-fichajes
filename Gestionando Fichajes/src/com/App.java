@@ -159,5 +159,9 @@ public class App {
         System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
         System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
 
+        //LABORATORIO ------------------------------
+
+        
+
     }
 }

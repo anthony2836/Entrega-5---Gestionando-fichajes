@@ -10,9 +10,9 @@ public abstract class Trabajador {
     private static int contadorTrabajadores = 0;
 
     public Trabajador(String nombre, Date fechaNacimiento, String paisOrigen) {
-        this.nombre = nombre;
-        this.FechaNacimientoTrabajador = FechaNacimientoTrabajador;
-        this.paisOrigen = paisOrigen;
+        this.nombre = (nombre != null) ? nombre : "Error, el nombre no debe ser nulo";
+        this.FechaNacimientoTrabajador = (fechaNacimiento != null) ? fechaNacimiento : new Date();
+        this.paisOrigen = (paisOrigen != null) ? paisOrigen : "Error, el pais no debe ser nulo";
         contadorTrabajadores++;
     }
 
@@ -43,8 +43,6 @@ public abstract class Trabajador {
     public void setPaisOrigen(String paisOrigen) {
         this.paisOrigen = paisOrigen;
     }
-
-
 
     public void mismaNacionalidad(Trabajador trabajador) {
         if (this.paisOrigen.equalsIgnoreCase(trabajador.getPaisOrigen())) {

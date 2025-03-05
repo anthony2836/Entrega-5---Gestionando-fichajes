@@ -15,7 +15,7 @@ public class Jugador {
     private Date FechaNacimiento;
     private String Pais;
     private Posicion Posicion;
-    public int Dorsal;
+    private int Dorsal;
     private Traspaso Traspaso;
 
     private Equipo Equipo_id;
