@@ -2,7 +2,7 @@ package com.clases;
 
 import java.text.Normalizer.Form;
 import java.util.Date;
-
+import com.interfaces.GestorTraspasos;
 import com.Trabajador;
 import com.enums.*;
 
@@ -10,7 +10,7 @@ import com.enums.*;
  * Representa a un entrenador de un equipo.
  * Contiene información sobre su nombre, formación táctica y equipo actual.
  */
-public class Entrenador extends Trabajador {
+public class Entrenador extends Trabajador implements GestorTraspasos {
     // private String Nombre;
     private Formacion Formacion;
 
@@ -37,7 +37,7 @@ public class Entrenador extends Trabajador {
         }
         incrementarEntrenadores();;
     }
-    // @Override
+    @Override
     public void aprobarTraspaso(Jugador jugador, Equipo equipo) {
         if (jugador.getEquipo_id() != equipo) {
             System.out.println("El entrenador no puede aprobar traspasos de jugadores de otros equipos.");
@@ -48,11 +48,10 @@ public class Entrenador extends Trabajador {
             jugador.setTraspaso(Traspaso.Aprobado_por_entrenador);
             System.out.println("El entrenador ha aprobado el traspaso de " + jugador.getNombre());
         } else {
-            System.out.println("El traspaso de " + jugador.getNombre() + " aún no ha sido solicitado.");
+            System.out.println("No se puede decidir el traspaso de " + jugador.getNombre() + ", aun no ha sido solicitado.");
         }
     }
-
-    // @Override
+    @Override
     public void rechazarTraspaso(Jugador jugador, Equipo equipo) {
         if (jugador.getEquipo_id() != equipo) {
             System.out.println("El entrenador no puede rechazar traspasos de jugadores de otros equipos.");
@@ -62,6 +61,10 @@ public class Entrenador extends Trabajador {
         jugador.setTraspaso(Traspaso.Rechazado_por_entrenador);
         System.out.println("El entrenador ha rechazado el traspaso de " + jugador.getNombre());
     }
+    
+
+
+
 
 
     @Override

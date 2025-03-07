@@ -163,8 +163,8 @@ public class App {
         // j1.mismaNacionalidad(j2);
         // e1.mostrarInfo();
         // System.out.println(j1);
-        System.out.println(Trabajador.getTotalEntrenadores());
-        Trabajador.getTotalEntrenadores();
+        // System.out.println(Trabajador.getTotalEntrenadores());
+        // Trabajador.getTotalEntrenadores();
         // j1.setTraspaso(Traspaso.Solicitado);
         // j2.setTraspaso(Traspaso.Solicitado);
         // j3.setTraspaso(Traspaso.Solicitado);
@@ -176,6 +176,10 @@ public class App {
         // p1.aprobarTraspaso(j1, Team1);
         // p1.aprobarTraspaso(j2, Team1);
         // p1.aprobarTraspaso(j3, Team2);
+        e1.aprobarTraspaso(j1, Team1);
+        e1.rechazarTraspaso(j1, Team1);
+
+
 
         
         

@@ -3,12 +3,13 @@ import com.enums.*;
 import java.util.Date;
 import com.Trabajador;
 import com.clases.*;
+import com.interfaces.*;
 
 /**
  * Representa a un presidente de un equipo de fútbol con atributos como DNI,
  * nombre y el equipo al que pertenece.
  */
-public class Presidente extends Trabajador {
+public class Presidente extends Trabajador implements GestorTraspasos{
     private String DNI;
     // private String Nombre;
     private Equipo Equipo_id;
@@ -43,7 +44,7 @@ public class Presidente extends Trabajador {
 
         if (jugador.getTraspaso() == Traspaso.Aprobado_por_entrenador) {
             jugador.setTraspaso(Traspaso.Aprobado_por_presidente);
-            System.out.println("El presidente ha aprobado el traspaso de " + jugador.getNombre());
+            System.out.println("El presidente ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
         } else {
             System.out.println("El presidente no puede aprobar el traspaso de " + jugador.getNombre() +
                     " porque el entrenador aún no lo ha aprobado.");
@@ -60,8 +61,16 @@ public class Presidente extends Trabajador {
         jugador.setTraspaso(Traspaso.Rechazado_por_presidente);
         System.out.println("El presidente ha rechazado el traspaso de " + jugador.getNombre());
     }
-
     
+
+
+
+
+
+
+
+
+
     @Override
     public void mostrarInfo(){
         System.out.println("Mi nombres es: " + nombre + " Soy un Presidente");
