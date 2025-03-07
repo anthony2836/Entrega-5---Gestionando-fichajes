@@ -1,19 +1,19 @@
 package com.clases;
-
 import com.enums.*;
+import java.util.Date;
+import com.Trabajador;
 import com.clases.*;
 
 /**
  * Representa a un presidente de un equipo de fútbol con atributos como DNI,
  * nombre y el equipo al que pertenece.
  */
-public class Presidente {
+public class Presidente extends Trabajador {
     private String DNI;
-    private String Nombre;
-
+    // private String Nombre;
     private Equipo Equipo_id;
     /** Contador estático para el total de presidentes creados. */
-    private static int totalPresidentes = 0;
+    // private static int totalPresidentes = 0;
 
     /**
      * Constructor de la clase Presidente.
@@ -22,22 +22,49 @@ public class Presidente {
      * @param nombre_presidente Nombre del presidente.
      * @param equipo_presidente Equipo del presidente.
      */
-    public Presidente(String dni_presidente, String nombre_presidente, Equipo equipo_presidente) {
-
+    public Presidente(String dni_presidente, Date fechaNacimientoPresidente, String paisEntrenador,
+            String nombre_presidente, Equipo equipo_presidente) {
+        super(nombre_presidente, fechaNacimientoPresidente, paisEntrenador);
         if (dni_presidente != null) {
             this.DNI = dni_presidente;
         } else {
             System.out.println("Error: El dni no debe ser Null");
             this.DNI = "Desconocido";
         }
+        incrementarPresidentes();
+    }
 
-        if (nombre_presidente != null) {
-            this.Nombre = nombre_presidente;
-        } else {
-            System.out.println("Error: El nombre no debe ser Null");
-            this.Nombre = "Desconocido";
+    // @Override
+    public void aprobarTraspaso(Jugador jugador, Equipo equipo) {
+        if (jugador.getEquipo_id() != equipo) {
+            System.out.println("El presidente no puede aprobar traspasos de jugadores de otros equipos.");
+            return;
         }
-        totalPresidentes++;
+
+        if (jugador.getTraspaso() == Traspaso.Aprobado_por_entrenador) {
+            jugador.setTraspaso(Traspaso.Aprobado_por_presidente);
+            System.out.println("El presidente ha aprobado el traspaso de " + jugador.getNombre());
+        } else {
+            System.out.println("El presidente no puede aprobar el traspaso de " + jugador.getNombre() +
+                    " porque el entrenador aún no lo ha aprobado.");
+        }
+    }
+
+    // @Override
+    public void rechazarTraspaso(Jugador jugador, Equipo equipo) {
+        if (jugador.getEquipo_id() != equipo) {
+            System.out.println("El presidente no puede rechazar traspasos de jugadores de otros equipos.");
+            return;
+        }
+
+        jugador.setTraspaso(Traspaso.Rechazado_por_presidente);
+        System.out.println("El presidente ha rechazado el traspaso de " + jugador.getNombre());
+    }
+
+    
+    @Override
+    public void mostrarInfo(){
+        System.out.println("Mi nombres es: " + nombre + " Soy un Presidente");
     }
 
     /**
@@ -45,9 +72,9 @@ public class Presidente {
      * 
      * @return Número total de presidentes instanciados.
      */
-    public static int getTotalPresidentes() {
-        return totalPresidentes;
-    }
+    // public static int getTotalPresidentes() {
+    //     return totalPresidentes;
+    // }
 
     /**
      * Obtiene el DNI del presidente.
@@ -68,28 +95,6 @@ public class Presidente {
             this.DNI = dni;
         } else {
             System.out.println("Error, DNI no valido");
-        }
-    }
-
-    /**
-     * Obtiene el nombre del presidente.
-     * 
-     * @return Nombre del presidente.
-     */
-    public String getNombre() {
-        return Nombre;
-    }
-
-    /**
-     * Establece el nombre del presidente.
-     * 
-     * @param nombre Nuevo nombre del presidente.
-     */
-    public void setNombre(String nombre) {
-        if (nombre != null) {
-            this.Nombre = nombre;
-        } else {
-            System.out.println("Error, nombre no valido");
         }
     }
 
@@ -115,15 +120,24 @@ public class Presidente {
         }
     }
 
+    @Override
+    public String toString() {
+        String presidenteEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
+        return "Presidente [DNI=" + DNI + ", Equipo_id=" + presidenteEquipo + ", Nombre=" + getNombre()
+                + ", FechaNacimientoTrabajador=" + getFechaNacimientoTrabajador() + ", PaisOrigen="
+                + getPaisOrigen() + "]";
+    }
+
     /**
      * Representación de los atributos del Presidente.
      * 
      * @return Cadena con los datos del presidente.
      */
-    @Override
-    public String toString() {
-        String presidenteEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
-        return "Presidente [DNI=" + DNI + ", Nombre=" + Nombre + ", Equipo_id=" + presidenteEquipo + "]";
-    }
+    // @Override
+    // public String toString() {
+    //     String presidenteEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
+    //     return "Presidente [DNI=" + DNI + ", Equipo_id=" + presidenteEquipo + "]";
+    // }
+    
 
 }

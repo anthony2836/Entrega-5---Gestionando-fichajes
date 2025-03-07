@@ -33,13 +33,13 @@ public class App {
      */
     public static void main(String[] args) throws Exception {
 
-        Presidente p1 = new Presidente("43234401B", "Joan Laporta", null);
-        Presidente p2 = new Presidente("34565543L", "Florentino Pérez", null);
-        Presidente p3 = new Presidente("23434456M", "Enrrique Cerezo Torres", null);
+        Presidente p1 = new Presidente("43234401B", generarFechaNacimiento(2000, 2, 2), "Peru", "Joan Laporta", null);
+        Presidente p2 = new Presidente("34565543L", generarFechaNacimiento(2000, 2, 2), "Peru", "Florentino Pérez", null);
+        Presidente p3 = new Presidente("23434456M", generarFechaNacimiento(2000, 2, 2), "Peru", "Enrrique Cerezo Torres", null);
 
-        Entrenador e1 = new Entrenador("Hansi Flick", Formacion._352, null);
-        Entrenador e2 = new Entrenador("Carlo Ancelotti", Formacion._333, null);
-        Entrenador e3 = new Entrenador("Diego Simeone", Formacion._443, null);
+        Entrenador e1 = new Entrenador("Hansi Flick", generarFechaNacimiento(2000, 2, 2), "Peru", Formacion._352, null);
+        Entrenador e2 = new Entrenador("Carlo Ancelotti", generarFechaNacimiento(2000, 2, 2), "Peru", Formacion._333, null);
+        Entrenador e3 = new Entrenador("Diego Simeone", generarFechaNacimiento(2000, 2, 2), "Peru", Formacion._443, null);
 
         Equipo Team1 = new Equipo("Barcelona", "FBC", null, null, null);
         Equipo Team2 = new Equipo("RealMadrid", "RMCF", null, null, null);
@@ -97,70 +97,87 @@ public class App {
         j5.setEquipo_id(Team3);
         j6.setEquipo_id(Team3);
 
-        System.out.println(Team1);
-        System.out.println(p1);
-        System.out.println(e1);
-        System.out.println(j1);
+        // System.out.println(Team1);
+        // System.out.println(p1);
+        // System.out.println(e1);
+        // System.out.println(j1);
 
-        System.out.println();
+        // System.out.println();
 
-        // -- TRASPASOS, ELIMIACION Y AGREGACION DE JUGADORES --
-        System.out.println("---SOLICITUDES DE TRASPASOS---");
-        j1.setTraspaso(Traspaso.Solicitado);
-        j2.setTraspaso(Traspaso.Solicitado);
-        j3.setTraspaso(Traspaso.Solicitado);
-        System.out.println(j1);
-        System.out.println(j2);
-        System.out.println(j3);
+        // // -- TRASPASOS, ELIMIACION Y AGREGACION DE JUGADORES --
+        // System.out.println("---SOLICITUDES DE TRASPASOS---");
+        // j1.setTraspaso(Traspaso.Solicitado);
+        // j2.setTraspaso(Traspaso.Solicitado);
+        // j3.setTraspaso(Traspaso.Solicitado);
+        // System.out.println(j1);
+        // System.out.println(j2);
+        // System.out.println(j3);
 
-        System.out.println();
+        // System.out.println();
 
-        // DECISION DE ENTRENADOR
-        System.out.println("---PROCESO DE DECISION DEL ENTRENADOR---");
-        Team1.decidirTraspasoEntrenador(j1, true);
-        Team1.decidirTraspasoEntrenador(j2, false);
-        Team1.decidirTraspasoEntrenador(j3, true);
+        // // DECISION DE ENTRENADOR
+        // System.out.println("---PROCESO DE DECISION DEL ENTRENADOR---");
+        // Team1.decidirTraspasoEntrenador(j1, true);
+        // Team1.decidirTraspasoEntrenador(j2, false);
+        // Team1.decidirTraspasoEntrenador(j3, true);
 
-        System.out.println();
+        // System.out.println();
 
-        // DECISION DEL PRESIDENTE DE BARCELONA
-        System.out.println("---PROCESO DE DECISION DEL PRESIDENTE---");
-        Team1.decidirTraspasoPresidente(j1, true);
-        Team1.decidirTraspasoPresidente(j2, true);
+        // // DECISION DEL PRESIDENTE DE BARCELONA
+        // System.out.println("---PROCESO DE DECISION DEL PRESIDENTE---");
+        // Team1.decidirTraspasoPresidente(j1, true);
+        // Team1.decidirTraspasoPresidente(j2, true);
 
-        System.out.println();
+        // System.out.println();
 
-        // RESETEO DE ESTADOS DE TRASPASO
-        System.out.println("---PROCESO DE RESETEO DEL EQUIPO---");
-        j1.setEquipo_id(Team2);
-        Team1.resetearEstadosTraspaso();
-        System.out.println(j1);
-        System.out.println(j2);
+        // // RESETEO DE ESTADOS DE TRASPASO
+        // System.out.println("---PROCESO DE RESETEO DEL EQUIPO---");
+        // j1.setEquipo_id(Team2);
+        // Team1.resetearEstadosTraspaso();
+        // System.out.println(j1);
+        // System.out.println(j2);
 
-        System.out.println();
+        // System.out.println();
 
-        // ELIMINAR Y AGREGAR A JUGADOR
-        System.out.println("---PROCESO DE ELIMINACION DE JUGADOR---");
-        Team1.eliminarJugador(j1);
-        System.out.println(Team1);
+        // // ELIMINAR Y AGREGAR A JUGADOR
+        // System.out.println("---PROCESO DE ELIMINACION DE JUGADOR---");
+        // Team1.eliminarJugador(j1);
+        // System.out.println(Team1);
 
-        System.out.println();
+        // System.out.println();
 
-        System.out.println("GESTIONANDO JUGADORES...");
-        System.out.println("---PROCESO DE AGREGACION DE JUGADOR---");
-        Team2.agregarJugador(j1);
-        System.out.println(Team2);
+        // System.out.println("GESTIONANDO JUGADORES...");
+        // System.out.println("---PROCESO DE AGREGACION DE JUGADOR---");
+        // Team2.agregarJugador(j1);
+        // System.out.println(Team2);
 
-        System.out.println();
+        // System.out.println();
 
-        // CONTEO DE OBJETOS CREADOS PARA CADA CLASE
-        System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());
-        System.out.println("Total de presidentes creados: " + Presidente.getTotalPresidentes());
-        System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
-        System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
+        // // CONTEO DE OBJETOS CREADOS PARA CADA CLASE
+        // System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());
+        // System.out.println("Total de presidentes creados: " + Presidente.getTotalPresidentes());
+        // System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
+        // System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
 
         //LABORATORIO ------------------------------
+        // j1.mismaNacionalidad(j2);
+        // e1.mostrarInfo();
+        // System.out.println(j1);
+        System.out.println(Trabajador.getTotalEntrenadores());
+        Trabajador.getTotalEntrenadores();
+        // j1.setTraspaso(Traspaso.Solicitado);
+        // j2.setTraspaso(Traspaso.Solicitado);
+        // j3.setTraspaso(Traspaso.Solicitado);
 
+        // e1.aprobarTraspaso(j1,Team1);
+        // e1.rechazarTraspaso(j2,Team1);
+        // e2.aprobarTraspaso(j3,Team2);
+
+        // p1.aprobarTraspaso(j1, Team1);
+        // p1.aprobarTraspaso(j2, Team1);
+        // p1.aprobarTraspaso(j3, Team2);
+
+        
         
 
     }
